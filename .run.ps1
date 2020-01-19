@@ -65,7 +65,7 @@ switch ($args[0]) {
         Set-Location vcpkg
         .\bootstrap-vcpkg.bat
         .\vcpkg remove --outdated --recurse
-        .\vcpkg install abseil boost-filesystem boost-program-options boost-serialization ceres double-conversion eigen3 flann gsl-lite gtest intel-mkl --triplet x64-windows
+        .\vcpkg install abseil boost-filesystem boost-program-options boost-serialization ceres double-conversion eigen3 flann gsl-lite gtest intel-mkl pybind11 --triplet x64-windows
         break
     }
     'test' {

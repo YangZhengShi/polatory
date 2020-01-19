@@ -94,6 +94,7 @@ endif()
 
 add_subdirectory(benchmark)
 add_subdirectory(examples)
+add_subdirectory(python)
 add_subdirectory(src)
 
 enable_testing()
