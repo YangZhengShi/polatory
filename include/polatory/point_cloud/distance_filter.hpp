@@ -33,6 +33,10 @@ public:
     return std::make_tuple(filtered(m), filtered(std::forward<Args>(args))...);
   }
 
+  const std::vector<index_t>& filtered_indices() const {
+    return filtered_indices_;
+  }
+
 private:
   const index_t n_points_;
 

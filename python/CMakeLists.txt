@@ -1,18 +1,12 @@
 find_package(pybind11 CONFIG REQUIRED)
 
-set(TARGET pola)
+set(TARGET python_binding)
 
-add_library(${TARGET} MODULE main.cpp)
+pybind11_add_module(${TARGET} MODULE python_binding.cpp)
 
-target_link_libraries(${TARGET} PRIVATE
-    polatory
-    pybind11::module
-)
+target_link_libraries(${TARGET} PRIVATE polatory)
 
-set_target_properties(${TARGET} PROPERTIES
-    PREFIX "${PYTHON_MODULE_PREFIX}"
-    SUFFIX "${PYTHON_MODULE_EXTENSION}"
-)
+set_target_properties(${TARGET} PROPERTIES OUTPUT_NAME polatory)
 
 if(MSVC)
     polatory_get_prebuilt_boost_dlls(BOOST_DLLS)
